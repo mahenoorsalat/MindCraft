@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(6ABARL.gif) no-repeat center center/cover;
+}
+
+body, html {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+
+.cube div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.cube div span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(165, 164, 164), rgb(67, 89, 218));
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(165, 164, 164);
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.top::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background-color: rgb(67, 89, 218);
+    transform: translateZ(-380px);
+    filter: blur(20px);
+    box-shadow: 0 0 120px rgb(148, 159, 223), 0 0 200px rgb(81, 98, 196), 0 0 300px rgb(50, 69, 175), 0 0 400px rgb(17, 49, 226);
+}
+
+h1 {
+    border-width: 5px;
+    border-bottom: 2px solid blue;
+    color: white;
+}
+
+h1 span {
+    font-size: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.cube1 {
+    right: 0;
+    margin: 21px 480px;
+}
+
+/* Media Queries */
+
+/* Medium devices (tablets, 421px - 1023px) */
+@media only screen and (min-width: 421px) and (max-width: 1023px) {
+
+    h1 {
+        border-width: 5px;
+        border-bottom: 2px solid blue;
+        color: white;
+        margin-left:90px;
+    }
+    
+    h1 span {
+        font-size: 40px;
+        position: relative;
+        z-index: 1;
+    }
+    .cube {
+        width: 200px;
+        height: 200px;
+    }
+
+    .cube div span, .top {
+        width: 200px;
+        height: 200px;
+        transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(100px);
+    }
+
+    .top::before {
+        width: 200px;
+        height: 200px;
+        transform: translateZ(-250px);
+    }
+}
+
+/* Small devices (phones, max-width: 420px) */
+@media only screen and (max-width: 420px) {
+
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+h1 {
+    
+    text-align: center;
+    border-width: 5px;
+    border-bottom: 2px solid blue;
+    color: white;
+}
+
+h1 span {
+    font-size: 40px;
+    position: relative;
+    z-index: 1;
+}
+    .cube {
+        width: 150px;
+        height: 150px;
+    }
+
+    .cube div span, .top {
+        width: 150px;
+        height: 150px;
+        transform: rotateY(calc(90deg * var(--i))) translateZ(75px);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(75px);
+    }
+
+    .top::before {
+        width: 150px;
+        height: 150px;
+        transform: translateZ(-190px);
+    }
+}
