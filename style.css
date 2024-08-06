@@ -81,6 +81,7 @@ h1 {
     border-width: 5px;
     border-bottom: 2px solid blue;
     color: white;
+    font-size: 21px;
 }
 
 h1 span {
@@ -100,6 +101,7 @@ h1 span {
 @media only screen and (min-width: 421px) and (max-width: 1023px) {
 
     h1 {
+        text-align: center;
         border-width: 5px;
         border-bottom: 2px solid blue;
         color: white;
